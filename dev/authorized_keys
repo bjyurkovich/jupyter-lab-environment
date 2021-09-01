@@ -1,1 +1,0 @@
-command="cd /workspace ; /bin/bash -l" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHv8zMeCcNBfPGZaO8XoIjnXmurchEjrV9UfJZMq4EGJ dev@dev
