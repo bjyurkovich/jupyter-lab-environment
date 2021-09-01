@@ -48,10 +48,10 @@ VOLUME /workspace-dev
 
 
 RUN mkdir /root/.ssh
-COPY ./sshd_config /etc/ssh/sshd_config
-COPY ./id_ed25519 /root/.ssh
-COPY ./id_ed25519.pub /root/.ssh
-COPY ./authorized_keys /root/.ssh
+# COPY ./sshd_config /etc/ssh/sshd_config
+# COPY ./id_ed25519 /root/.ssh
+# COPY ./id_ed25519.pub /root/.ssh
+# COPY ./authorized_keys /root/.ssh
 
 RUN mkdir /runcontainer
 COPY ./headless.sh /runcontainer
