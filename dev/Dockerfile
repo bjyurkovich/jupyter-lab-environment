@@ -4,8 +4,8 @@ FROM ubuntu:bionic
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Update stuff
-RUN DEBIAN_FRONTEND=noninteractive RUN apt-get update --fix-missing
-RUN DEBIAN_FRONTEND=noninteractive RUN apt-get install -y build-essential libssl-dev checkinstall \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update --fix-missing
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libssl-dev checkinstall \
     curl wget git gnupg nano vim htop openssh-server -y
 
 RUN apt-get install -y pkg-config libcairo2-dev 
@@ -32,7 +32,7 @@ ENV LANG=C.UTF-8
 RUN npm install -g ts-node yarn nodemon
 
 # install python3.9
-RUN DEBIAN_FRONTEND=noninteractive RUN apt-get install ffmpeg libsm6 libxext6 python3-opencv  -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install ffmpeg libsm6 libxext6 python3-opencv  -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:deadsnakes/ppa -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
