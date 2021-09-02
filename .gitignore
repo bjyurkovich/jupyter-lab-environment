@@ -2,3 +2,4 @@
 venv
 pyc
 __pycache__
+yolov3.weights

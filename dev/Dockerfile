@@ -31,7 +31,8 @@ ENV LANG=C.UTF-8
 # install global node stuff
 RUN npm install -g ts-node yarn nodemon
 
-# install python3.8
+# install python3.9
+RUN apt-get install ffmpeg libsm6 libxext6 python3-opencv  -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:deadsnakes/ppa -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
@@ -55,6 +56,7 @@ RUN mkdir /root/.ssh
 
 RUN mkdir /runcontainer
 COPY ./headless.sh /runcontainer
+
 
 # JUPYTERLAB
 RUN virtualenv /workspace/venv 
